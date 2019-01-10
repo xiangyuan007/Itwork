@@ -1,0 +1,39 @@
+.main-container{
+    width:1000px;
+    height:auto;
+    margin:40px auto;
+    padding:20px;
+    border-radius: 10px;
+    border: solid 3px #66AAFF;
+}
+.database-table{
+    width:inherit;
+    height:auto;
+    background-color: #FFFFFF;
+}
+.database-table th{
+    margin:10px 0;
+}
+.database-table td {
+    padding:0 10px;
+    width:20%;
+    height:30px;
+}
+.database-table td a:link{
+    color: #4488EE;
+}
+.database-table td a:visited{
+    color: #9999FF;
+}
+.database-table .table-row0 {
+    background-color:#FFFFFF;
+}
+.database-table .table-row1 {
+    background-color:#EEEEEE;
+}
+.database-table .table-row0:hover{
+    background-color: #EEBBFF;
+}
+.database-table .table-row1:hover{
+    background-color: #BBEEFF;
+}

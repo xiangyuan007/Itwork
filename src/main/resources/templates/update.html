@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+    <link rel="stylesheet" href="/css/updateStyle.css" type="text/css">
+</head>
+<body>
+<div style="text-align:center;margin:20px auto;">
+    <b style="font-size:16px;" th:text="${cap}">操作成功！</b>
+</div>
+<div class="main-container">
+    <form method="post" th:object="${emp}">
+        <div class="item_content">
+            <div class="label_content">兼职人员信息id：</div>
+            <div class="input_content">
+                <input type="text" name="empId" th:value="${emp.empId}" th:field="*{empId}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content" >姓名：</div>
+            <div class="input_content">
+                <input type="text" name="empName" th:value="${emp.empName}" th:field="*{empName}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content">性别：</div>
+            <div class="input_content">
+                <input type="text" name="empSex"  th:value="${emp.empSex}" th:field="*{empSex}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content">电话号码：</div>
+            <div class="input_content">
+                <input type="text" name="empPhone"  th:value="${emp.empPhone}" th:field="*{empPhone}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content">地址：</div>
+            <div class="input_content">
+                <input type="text" name="empAddress"  th:value="${emp.empAddress}" th:field="*{empAddress}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content">学历：</div>
+            <div class="input_content">
+                <input type="text" name="empDegree"  th:value="${emp.empDegree}" th:field="*{empDegree}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content">简介：</div>
+            <div class="input_content">
+                <input type="text" name="empIntroduce"  th:value="${emp.empIntroduce}" th:field="*{empIntroduce}">
+            </div>
+        </div>
+        <div class="item_content">
+            <div class="label_content">审核状态：</div>
+            <div class="input_content">
+                <input type="text" name="empStatus"  th:value="${emp.empStatus}" th:field="*{empStatus}">
+            </div>
+        </div>
+        <div class="item_content">
+            <input id = "submitBtn" type="submit" name="submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

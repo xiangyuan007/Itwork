@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>结果</title>
+    <link rel="stylesheet" href="/css/resultStyle.css" type="text/css">
+</head>
+<body>
+
+<div class="main-container">
+    <div style="text-align:center;margin:20px auto;">
+        <b>操作成功！</b>
+    </div>
+    <table class="result-table" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>属性</th>
+            <th>内容</th>
+        </tr>
+        <tr>
+            <td>兼职信息id</td>
+            <td th:text="${emp.empId}"></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td th:text="${emp.empName}"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td th:text="${emp.empSex}"></td>
+        </tr>
+        <tr>
+            <td>电话号码</td>
+            <td th:text="${emp.empPhone}"></td>
+        </tr>
+        <tr>
+            <td>地址</td>
+            <td th:text="${emp.empAddress}"></td>
+        </tr>
+        <tr>
+            <td>学历</td>
+            <td th:text="${emp.empDegree}"></td>
+        </tr>
+        <tr>
+            <td>简介</td>
+            <td th:text="${emp.empIntroduce}"></td>
+        </tr>
+        <tr>
+            <td>审核状态</td>
+            <td th:text="${emp.empStatus}"></td>
+        </tr>
+    </table>
+    <div style="width:170px;margin:auto 30px;padding:25px;">
+        <button id="returnBtn" onclick="location.assign('/InfWeb/all')">返回查询页面</button>
+    </div>
+
+</div>
+</body>
+</html>
