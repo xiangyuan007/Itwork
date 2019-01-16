@@ -11,6 +11,7 @@ public class JobInf {
     简介
     审核状态*/
     @Id
+    private String BusId;
     private String JobId;
     private String JobTitle;
     private String JobType;
@@ -19,7 +20,13 @@ public class JobInf {
     private String JobPNum;
     private String JobIntroduce;
     private String JobStatus;
+    public String getBusId() {
+        return BusId;
+    }
 
+    public void setBusId(String busId) {
+        BusId = busId;
+    }
     public String getJobId() {
         return JobId;
     }

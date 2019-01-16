@@ -7,6 +7,7 @@ import com.work.Repository.JobRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("job")
@@ -37,5 +38,16 @@ public class JobController {
     @PutMapping(value = "/update")
     private JobInf UpdateJob(JobInf job){
         return jobService.UpdateJob(job);
+    }
+
+    //查询岗位信息列表
+    @GetMapping(value = "/findPart")
+    List<Map<String,String>> findPart() {
+        return jobService.findPart();
+    }
+    //选择地区和类型后查询岗位信息列表
+    @GetMapping(value = "/findPartByKey")
+    List<Map<String,String>> findPartByKey(@RequestBody JobInf jobInf) {
+        return jobService.findPartByKey(jobInf.getJobType(),jobInf.getJobPlace());
     }
 }

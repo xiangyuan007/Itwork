@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class JobServiceImpl implements JobService{
     @Autowired
@@ -26,5 +28,16 @@ public class JobServiceImpl implements JobService{
     }
     public JobInf UpdateJob(JobInf job){
         return jobRepository.save(job);
+    }
+    public List<Map<String,String>> findPart(){return jobRepository.findPart();}
+    public List<Map<String,String>> findPartByKey(String type,String place){
+        if(type==null&&place==null)
+            return jobRepository.findPart();
+        else if(type!=null&&place==null)
+            return jobRepository.findPartByType(type);
+        else if(type==null&&place!=null)
+            return jobRepository.findPartByPlace(place);
+        else
+            return jobRepository.findPartByKey(type,place);
     }
 }
