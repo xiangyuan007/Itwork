@@ -4,9 +4,9 @@ import com.work.Entity.JobConserve;
 import java.util.List;
 
 public interface ConserveService {
-    JobConserve addConserve(JobConserve conserve);
+    int addConserve(JobConserve conserve);
     JobConserve FindOne(String id);
     List<JobConserve> FindAll();
-    void deleteConserve(String id);
+    int deleteConserve(String empId,String jobId);
     JobConserve UpdateConserve(JobConserve conserve);
 }

@@ -6,6 +6,7 @@ import com.work.Repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +31,7 @@ public class JobServiceImpl implements JobService{
         return jobRepository.save(job);
     }
     public List<Map<String,String>> findPart(){return jobRepository.findPart();}
+    @Transactional
     public List<Map<String,String>> findPartByKey(String type,String place){
         if(type==null&&place==null)
             return jobRepository.findPart();
@@ -39,5 +41,9 @@ public class JobServiceImpl implements JobService{
             return jobRepository.findPartByPlace(place);
         else
             return jobRepository.findPartByKey(type,place);
+    }
+    @Transactional
+    public List<JobInf> FindByBusId(String id){
+        return jobRepository.findByBusId(id);
     }
 }

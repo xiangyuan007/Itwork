@@ -4,9 +4,10 @@ import com.work.Entity.JobApply;
 import java.util.List;
 
 public interface ApplyService {
-    JobApply addApply(JobApply apply);
+    int addApply(JobApply apply);
     JobApply FindOne(String id);
     List<JobApply> FindAll();
-    void deleteApply(String id);
+    int deleteApply(String empId,String jobId);
     JobApply UpdateApply(JobApply apply);
+    JobApply FindByJobId(String id);
 }

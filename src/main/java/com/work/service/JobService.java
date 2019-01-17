@@ -11,4 +11,5 @@ public interface JobService {
     JobInf UpdateJob(JobInf Job);
     List<Map<String,String>> findPart();
     List<Map<String,String>> findPartByKey(String type,String place);
+    List<JobInf> FindByBusId(String id);
 }

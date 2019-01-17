@@ -16,4 +16,6 @@ public interface JobRepository extends JpaRepository<JobInf,String>{
     List<Map<String,String>> findPartByPlace(@RequestParam("place") String place);
     @Query(value="select bus_id,job_id,job_title,job_type,job_place from job_inf where job_type=job_type_index and job_place=job_place_index",nativeQuery = true)
     List<Map<String,String>> findPartByKey(@RequestParam("type") String type,@RequestParam("place") String place);
+    @Query(value="select * from job_inf where bus_id=?1",nativeQuery = true)
+    List<JobInf> findByBusId(@RequestParam("id") String id);
 }
