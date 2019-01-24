@@ -125,11 +125,11 @@ public class WxController {
     @Transactional
     @PostMapping("/showApply")
     public List<ApplyDetail> showApply(@RequestBody JobInf jobInf) {
-        //tring busId = jobInf.getBusId();
-       // return applyInfRepository.findApplyInf(busId);
-        return null;
+        String busId = jobInf.getBusId();
+        return applyInfRepository.findApplyInf(busId);
+        //return null;
     }
-    //显示收藏心信息列表
+    //显示收藏信息列表
     @Transactional
     @PostMapping("/showConserveList")
     public List<ConserveList> showConserveList(@RequestBody JobConserve jobConserve) {
