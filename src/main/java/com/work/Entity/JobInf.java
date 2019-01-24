@@ -1,93 +1,81 @@
 package com.work.Entity;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Entity
 public class JobInf {
-    /*岗位信息id
-    兼职标题
-    兼职类型
-    工作地点
-    联系方式
-    招聘人数
-    简介
-    审核状态*/
     @Id
-    private String BusId;
-    private String JobId;
-    private String JobTitle;
-    private String JobType;
-    private String JobPlace;
-    private String JobPhone;
-    private String JobPNum;
-    private String JobIntroduce;
-    private String JobStatus;
+    private String busId;
+    private String jobId;
+    private String jobTitle;
+    private String jobType;
+    private String jobPlace;
+    private String jobPhone;
+    private String jobPNum;
+    private String jobIntroduce;
+    private String jobStatus;
     public String getBusId() {
-        return BusId;
+        return busId;
     }
 
     public void setBusId(String busId) {
-        BusId = busId;
-    }
-    public String getJobId() {
-        return JobId;
-    }
-
-    public void setJobId(String jobId) {
-        JobId = jobId;
+        this.busId = busId;
     }
 
     public String getJobTitle() {
-        return JobTitle;
+        return jobTitle;
     }
 
     public void setJobTitle(String jobTitle) {
-        JobTitle = jobTitle;
+        this.jobTitle = jobTitle;
     }
 
     public String getJobType() {
-        return JobType;
+        return jobType;
     }
 
     public void setJobType(String jobType) {
-        JobType = jobType;
+        this.jobType = jobType;
     }
 
     public String getJobPlace() {
-        return JobPlace;
+        return jobPlace;
     }
 
     public void setJobPlace(String jobPlace) {
-        JobPlace = jobPlace;
+        this.jobPlace = jobPlace;
     }
 
     public String getJobPhone() {
-        return JobPhone;
+        return jobPhone;
     }
 
     public void setJobPhone(String jobPhone) {
-        JobPhone = jobPhone;
+        this.jobPhone = jobPhone;
     }
 
     public String getJobPNum() {
-        return JobPNum;
+        return jobPNum;
     }
 
     public void setJobPNum(String jobPNum) {
-        JobPNum = jobPNum;
+        this.jobPNum = jobPNum;
     }
 
     public String getJobIntroduce() {
-        return JobIntroduce;
+        return jobIntroduce;
     }
 
     public void setJobIntroduce(String jobIntroduce) {
-        JobIntroduce = jobIntroduce;
+        this.jobIntroduce = jobIntroduce;
     }
 
     public String getJobStatus() {
-        return JobStatus;
+        return jobStatus;
     }
 
     public void setJobStatus(String jobStatus) {
-        JobStatus = jobStatus;
+        this.jobStatus = jobStatus;
     }
 }

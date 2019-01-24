@@ -3,9 +3,7 @@ import com.work.Entity.JobInf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.work.service.JobService;
-import com.work.Repository.JobRepository;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +18,9 @@ public class JobController {
         return jobService.addJob(job);
     }
     //根据ID查询一个工作信息
-    @GetMapping(value = "/find/{id}")
-    public JobInf FindOne(@PathVariable("id") String id) {
-        return jobService.FindOne(id);
+    @PostMapping(value = "/find")
+    public JobInf FindOne(@RequestBody JobInf jobInf) {
+        return jobService.FindOne(jobInf.getBusId());
     }
     //查询全部工作信息
     @GetMapping(value = "/findAll")
@@ -46,8 +44,9 @@ public class JobController {
         return jobService.findPart();
     }
     //选择地区和类型后查询岗位信息列表
-    @GetMapping(value = "/findPartByKey")
-    List<Map<String,String>> findPartByKey(@RequestBody JobInf jobInf) {
+    @PostMapping("/findPartByKey")
+    public List<Map<String,String>> findPartByKey(@RequestBody JobInf jobInf) {
+        System.out.println(jobInf.getJobType()+' '+jobInf.getJobPlace());
         return jobService.findPartByKey(jobInf.getJobType(),jobInf.getJobPlace());
     }
 }

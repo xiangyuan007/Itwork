@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
-
+//new
 @RestController
 @RequestMapping("wx")
 public class WxController {
@@ -125,8 +125,9 @@ public class WxController {
     @Transactional
     @PostMapping("/showApply")
     public List<ApplyDetail> showApply(@RequestBody JobInf jobInf) {
-        String busId = jobInf.getBusId();
-        return applyInfRepository.findApplyInf(busId);
+        //tring busId = jobInf.getBusId();
+       // return applyInfRepository.findApplyInf(busId);
+        return null;
     }
     //显示收藏心信息列表
     @Transactional

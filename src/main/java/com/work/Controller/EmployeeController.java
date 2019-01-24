@@ -18,6 +18,7 @@ public class EmployeeController {
     //增加一个兼职人员信息
     @PostMapping("/add")
     public EmployeeInf addEmployee(@RequestBody EmployeeInf employee){
+        System.out.println(employee.getEmpId());
        return employeeService.addEmployee(employee);
     }
     //根据ID查询一个兼职人员信息
