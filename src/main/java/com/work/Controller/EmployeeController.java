@@ -22,22 +22,22 @@ public class EmployeeController {
        return employeeService.addEmployee(employee);
     }
     //根据ID查询一个兼职人员信息
-    @GetMapping(value = "/find/{id}")
-    public EmployeeInf FindOne(@PathVariable("id") String id) {
-        return employeeService.FindOne(id);
+    @PostMapping(value = "/find")
+    public EmployeeInf FindOne(@RequestBody EmployeeInf employee) {
+        return employeeService.FindOne(employee.getEmpId());
     }
     //查询全部兼职人员信息
-    @GetMapping(value = "/findAll")
+    @PostMapping(value = "/findAll")
     public List<EmployeeInf> FindAll() { return employeeService.FindAll();
     }
     //根据ID删除一个兼职人员信息
-    @DeleteMapping(value = "/delete/{id}")
-    public void deleteEmployee(@PathVariable("id") String id) {
-        employeeService.deleteEmployee(id);
+    @PostMapping(value = "/delete")
+    public void deleteEmployee(@RequestBody EmployeeInf employee) {
+        employeeService.deleteEmployee(employee.getEmpId());
     }
     //更新
-    @PutMapping(value = "/update")
-    private EmployeeInf UpdateEmployee(EmployeeInf employee){
+    @PostMapping(value = "/update")
+    private EmployeeInf UpdateEmployee(@RequestBody EmployeeInf employee){
         return employeeService.UpdateEmployee(employee);
     }
    /* @Transactional

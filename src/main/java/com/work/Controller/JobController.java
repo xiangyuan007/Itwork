@@ -14,32 +14,32 @@ public class JobController {
     private JobService jobService;
     //增加一个工作信息
     @PostMapping("/add")
-    private JobInf addJob(JobInf job){
-        return jobService.addJob(job);
+    private JobInf addJob(@RequestBody JobInf jobInf){
+        return jobService.addJob(jobInf);
     }
     //根据ID查询一个工作信息
     @PostMapping(value = "/find")
     public JobInf FindOne(@RequestBody JobInf jobInf) {
-        return jobService.FindOne(jobInf.getBusId());
+        return jobService.FindOne(jobInf.getJobId());
     }
     //查询全部工作信息
-    @GetMapping(value = "/findAll")
+    @PostMapping(value = "/findAll")
     public List<JobInf> FindAll() {
         return jobService.FindAll();
     }
     //根据ID删除一个工作信息
-    @DeleteMapping(value = "/delete/{id}")
-    public void deleteJob(@PathVariable("id") String id) {
-        jobService.deleteJob(id);
+    @PostMapping(value = "/delete")
+    public void deleteJob(@RequestBody JobInf jobInf) {
+        jobService.deleteJob(jobInf.getJobId());
     }
     //更新
-    @PutMapping(value = "/update")
-    private JobInf UpdateJob(JobInf job){
-        return jobService.UpdateJob(job);
+    @PostMapping(value = "/update")
+    private JobInf UpdateJob(@RequestBody JobInf jobInfb){
+        return jobService.UpdateJob(jobInfb);
     }
 
     //查询岗位信息列表
-    @GetMapping(value = "/findPart")
+    @PostMapping(value = "/findPart")
     List<Map<String,String>> findPart() {
         return jobService.findPart();
     }

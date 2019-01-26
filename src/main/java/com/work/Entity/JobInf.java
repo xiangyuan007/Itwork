@@ -6,8 +6,8 @@ import javax.persistence.Id;
 @Entity
 public class JobInf {
     @Id
-    private String busId;
     private String jobId;
+    private String busId;
     private String jobTitle;
     private String jobType;
     private String jobPlace;
@@ -17,6 +17,14 @@ public class JobInf {
     private String jobStatus;
     public String getBusId() {
         return busId;
+    }
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     public void setBusId(String busId) {
