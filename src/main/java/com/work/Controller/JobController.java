@@ -37,7 +37,11 @@ public class JobController {
     private JobInf UpdateJob(@RequestBody JobInf jobInfb){
         return jobService.UpdateJob(jobInfb);
     }
-
+    //根据企业用户id查询岗位信息
+    @PostMapping(value = "/findByBusId")
+    public List<JobInf> findByBusId(@RequestBody JobInf jobInf) {
+        return jobService.FindByBusId(jobInf.getBusId());
+    }
     //查询岗位信息列表
     @PostMapping(value = "/findPart")
     List<Map<String,String>> findPart() {
@@ -48,5 +52,34 @@ public class JobController {
     public List<Map<String,String>> findPartByKey(@RequestBody JobInf jobInf) {
         System.out.println(jobInf.getJobType()+' '+jobInf.getJobPlace());
         return jobService.findPartByKey(jobInf.getJobType(),jobInf.getJobPlace());
+    }
+    //为企业用户添加岗位信息
+    @PostMapping("/addJobById")
+    private JobInf addJobById(@RequestBody JobInf jobInf){
+        int i=0;
+        int flag=1;
+        String index=jobInf.getBusId();
+        String jobId;
+        jobId=index+i;
+        JobInf job=new JobInf();
+        System.out.println(jobId);
+        try{
+            job=jobService.FindOne(jobId);
+        }
+        catch(Exception e){
+            flag=0;
+        }
+        while(flag!=0){
+            i=(++i)%100;
+            jobId=index+i;
+            try{
+                job=jobService.FindOne(jobId);
+            }
+            catch(Exception e){
+                flag=0;
+            }
+        }
+        jobInf.setJobId(jobId);
+        return jobService.addJob(jobInf);
     }
 }
