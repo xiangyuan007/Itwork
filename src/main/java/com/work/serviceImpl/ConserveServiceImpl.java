@@ -24,7 +24,7 @@ public class ConserveServiceImpl implements ConserveService {
         }
         return flag;
     }
-    public JobConserve FindOne(String id){
+    public JobConserve FindOne(Integer id){
         return conserveRepository.findById(id).get();
     }
     public List<JobConserve> FindAll(){

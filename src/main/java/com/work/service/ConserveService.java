@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ConserveService {
     int addConserve(JobConserve conserve);
-    JobConserve FindOne(String id);
+    JobConserve FindOne(Integer id);
     List<JobConserve> FindAll();
     int deleteConserve(String empId,String jobId);
     JobConserve UpdateConserve(JobConserve conserve);

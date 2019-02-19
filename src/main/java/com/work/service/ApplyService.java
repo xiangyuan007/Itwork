@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ApplyService {
     int addApply(JobApply apply);
-    JobApply FindOne(String id);
+    JobApply FindOne(Integer id);
     List<JobApply> FindAll();
     int deleteApply(String empId,String jobId);
     JobApply UpdateApply(JobApply apply);

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-public interface ApplyRepository extends JpaRepository<JobApply,String> {
+public interface ApplyRepository extends JpaRepository<JobApply,Integer> {
     @Modifying
     @Query(value="delete from job_apply where emp_id=?1 and job_id=?2",nativeQuery = true)
     void delete(@RequestParam("emp_id") String emp_id, @RequestParam("job_id") String job_id);

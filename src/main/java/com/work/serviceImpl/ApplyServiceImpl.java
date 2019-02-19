@@ -24,7 +24,7 @@ public class ApplyServiceImpl implements ApplyService {
         }
         return flag;
     }
-    public JobApply FindOne(String id){
+    public JobApply FindOne(Integer id){
         return applyRepository.findById(id).get();
     }
     public List<JobApply> FindAll(){
