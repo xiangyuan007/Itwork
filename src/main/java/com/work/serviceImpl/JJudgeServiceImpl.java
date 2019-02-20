@@ -14,13 +14,13 @@ public class JJudgeServiceImpl implements JJudgeService {
     public JobJudge addJudge(JobJudge judge){
         return jJudgeRepository.save(judge);
     }
-    public JobJudge FindOne(String id){
+    public JobJudge FindOne(Integer id){
         return jJudgeRepository.findById(id).get();
     }
     public List<JobJudge> FindAll(){
         return jJudgeRepository.findAll();
     }
-    public void deleteJudge(String id){
+    public void deleteJudge(Integer id){
         jJudgeRepository.deleteById(id);
     }
     public JobJudge UpdateJudge(JobJudge judge){

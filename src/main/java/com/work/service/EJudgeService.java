@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface EJudgeService {
     EmployeeJudge addJudge(EmployeeJudge judge);
-    EmployeeJudge FindOne(String id);
+    EmployeeJudge FindOne(Integer id);
     List<EmployeeJudge> FindAll();
-    void deleteJudge(String id);
+    void deleteJudge(Integer id);
     EmployeeJudge UpdateJudge(EmployeeJudge judge);
 }

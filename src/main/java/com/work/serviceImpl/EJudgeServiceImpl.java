@@ -14,13 +14,13 @@ public class EJudgeServiceImpl implements EJudgeService {
     public EmployeeJudge addJudge(EmployeeJudge judge){
         return eJudgeRepository.save(judge);
     }
-    public EmployeeJudge FindOne(String id){
+    public EmployeeJudge FindOne(Integer id){
         return eJudgeRepository.findById(id).get();
     }
     public List<EmployeeJudge> FindAll(){
         return eJudgeRepository.findAll();
     }
-    public void deleteJudge(String id){
+    public void deleteJudge(Integer id){
         eJudgeRepository.deleteById(id);
     }
     public EmployeeJudge UpdateJudge(EmployeeJudge judge){

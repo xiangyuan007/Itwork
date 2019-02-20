@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface JJudgeService {
     JobJudge addJudge(JobJudge judge);
-    JobJudge FindOne(String id);
+    JobJudge FindOne(Integer id);
     List<JobJudge> FindAll();
-    void deleteJudge(String id);
+    void deleteJudge(Integer id);
     JobJudge UpdateJudge(JobJudge judge);
 }
