@@ -1,8 +1,11 @@
 package com.work.Controller;
+import com.work.Entity.JobConserve;
 import com.work.Entity.JobInf;
+import com.work.Entity.JobJudge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.work.service.JobService;
+import com.work.service.JJudgeService;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +15,22 @@ import java.util.Map;
 public class JobController {
     @Autowired
     private JobService jobService;
+
+    @Autowired
+    private JJudgeService jJudgeService;
+
+    //增加评价
+    @PostMapping("/addJudge")
+    private JobJudge addJudge(@RequestBody JobJudge jobJudge){
+        return jJudgeService.addJudge(jobJudge);
+    }
+
+    //查看本岗位收藏情况
+    @PostMapping(value = "/conserveSituation")
+    private JobConserve findConserveSitu(@RequestBody JobConserve jobConserve){
+        return jobService.findSituByEmpId(jobConserve.getEmpId());// ********************************
+    }
+
     //增加一个工作信息
     @PostMapping("/add")
     private JobInf addJob(@RequestBody JobInf jobInf){
@@ -82,4 +101,5 @@ public class JobController {
         jobInf.setJobId(jobId);
         return jobService.addJob(jobInf);
     }
+
 }

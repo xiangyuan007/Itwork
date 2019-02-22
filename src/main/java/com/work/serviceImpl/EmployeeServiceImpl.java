@@ -16,7 +16,12 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employeeRepository.save(Employee);
     }
     public EmployeeInf FindOne(String id){
-        return employeeRepository.findById(id).get();
+        try{
+            EmployeeInf employee = employeeRepository.findById(id).get();
+            return employee;
+        }catch(Exception e) {
+            return null;
+        }
     }
     public List<EmployeeInf> FindAll(){
         return employeeRepository.findAll();

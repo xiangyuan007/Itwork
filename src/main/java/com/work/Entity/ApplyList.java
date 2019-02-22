@@ -10,6 +10,24 @@ public class ApplyList {
     private String jobTitle;
     private String jobType;
     private String jobPlace;
+    private String applyDate;
+    private String busId;
+
+    public String getApplyDate() {
+        return applyDate;
+    }
+
+    public void setApplyDate(String applyDate) {
+        this.applyDate = applyDate;
+    }
+
+    public String getBusId() {
+        return busId;
+    }
+
+    public void setBusId(String busId) {
+        this.busId = busId;
+    }
 
     public String getJobId() {
         return jobId;

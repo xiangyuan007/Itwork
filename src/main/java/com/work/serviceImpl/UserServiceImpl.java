@@ -16,7 +16,14 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
     public User findOne(String name){
-        return userRepository.findById(name).get();
+        List< User > userList = userRepository.findAllByUserName( name );
+        User user = new User();
+
+        for( User key : userList )
+        {
+            user = key;
+        }
+        return user;
     }
     public List<User> findAll(){
         return userRepository.findAll();

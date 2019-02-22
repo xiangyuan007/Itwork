@@ -1,5 +1,7 @@
 package com.work.Controller;
 import com.work.Entity.EmployeeInf;
+import com.work.Entity.EmployeeJudge;
+import com.work.service.EJudgeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +15,15 @@ import java.util.List;
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
-    //123
-    //321
+    @Autowired
+    private EJudgeService eJudgeService;
+
+    //增加评价
+    @PostMapping("/addJudge")
+    private EmployeeJudge addJudge(@RequestBody EmployeeJudge employeeJudge){
+        return eJudgeService.addJudge(employeeJudge);
+    }
+
     //增加一个兼职人员信息
     @PostMapping("/add")
     public EmployeeInf addEmployee(@RequestBody EmployeeInf employee){

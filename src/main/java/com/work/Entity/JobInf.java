@@ -15,6 +15,16 @@ public class JobInf {
     private String jobPNum;
     private String jobIntroduce;
     private String jobStatus;
+    private String jobDate;
+
+    public String getJobDate() {
+        return jobDate;
+    }
+
+    public void setJobDate(String jobDate) {
+        this.jobDate = jobDate;
+    }
+
     public String getBusId() {
         return busId;
     }

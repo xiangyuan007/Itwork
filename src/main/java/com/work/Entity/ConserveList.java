@@ -10,6 +10,24 @@ public class ConserveList {
     private String jobTitle;
     private String jobType;
     private String jobPlace;
+    private String conserveDate;
+    private String busId;
+
+    public String getConserveDate() {
+        return conserveDate;
+    }
+
+    public void setConserveDate(String conserveDate) {
+        this.conserveDate = conserveDate;
+    }
+
+    public String getBusId() {
+        return busId;
+    }
+
+    public void setBusId(String busId) {
+        this.busId = busId;
+    }
 
     public String getJobId() {
         return jobId;

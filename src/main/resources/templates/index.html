@@ -15,38 +15,63 @@
     </script>
 </head>
 <body>
-<div class="div-css">
-    <div style="padding-Top:5px;background:#ddd;height:40px">
-        <label style="margin-left:45px">审核状态：</label> <input type="text" id="empStatus" placeholder="  查询信息">
-        <button id="find" onclick="location.assign(find())">查询</button>
+<div class="all">
+    <div class="div-beside">
+        <div class="div-title">
+            <text class="titletext">管理系统</text>
+        </div>
+        <div class="div-link">
+            <a class="linktext" href="/InfWeb/all">兼职人员信息管理</a>
+        </div>
+        <div class="div-link">
+            <a class="linktext" href="/InfWeb/all2">岗位信息管理</a>
+        </div>
+        <div class="div-link">
+            <a class="linktext" href="/InfWeb/all3">用户信息管理</a>
+        </div>
     </div>
-    <table class="table-css">
-        <tr>
-            <th>兼职人员信息Id</th>
-            <th>姓名</th>
-            <th>性别</th>
-            <th>电话号码</th>
-            <th>地址</th>
-            <th>学历</th>
-            <th>简介</th>
-            <th>审核状态</th>
-        </tr>
-        <tr th:each="emp,iterStat:${emp}">
-            <!--<td th:text="${iterStat.Count}">aaa</td>-->
-            <td th:text="${emp.empId}">aaa</td>
-            <td th:text="${emp.empName}">aaa</td>
-            <td th:text="${emp.empSex}">aaa</td>
-            <td th:text="${emp.empPhone}">aaa</td>
-            <td th:text="${emp.empAddress}">aaa</td>
-            <td th:text="${emp.empDegree}">aaa</td>
-            <td th:text="${emp.empIntroduce}">aaa</td>
-            <td th:text="${emp.empStatus}">aaa</td>
-            <td align="center">
-                <a th:href="@{'/InfWeb/update/'+${emp.empId}}">修&nbsp改</a>&nbsp|&nbsp
-                <a th:href="@{'/InfWeb/delete/'+${emp.empId}}" onclick="return confirm('确认删除？')">删&nbsp除</a>
-            </td>
-        </tr>
-    </table>
+
+    <div class="div-css">
+        <div style="height: 61px;line-height: 59px;border-bottom: 1px solid gray;">
+            <label style="margin-left:45px">审核状态：</label> <input type="text" id="empStatus" placeholder="  查询信息">
+            <button id="find" onclick="location.assign(find())">查询</button>
+        </div>
+        <table class="table-css">
+            <tr>
+                <th>兼职人员信息ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>电话号码</th>
+                <th>地址</th>
+                <th>学历</th>
+                <th>简介</th>
+                <th>审核状态</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="emp,iterStat:${emp}">
+                <!--<td th:text="${iterStat.Count}">aaa</td>-->
+                <td th:text="${emp.empId}">aaa</td>
+                <td th:text="${emp.empName}">aaa</td>
+                <td th:text="${emp.empSex}">aaa</td>
+                <td th:text="${emp.empPhone}">aaa</td>
+                <td th:text="${emp.empAddress}">aaa</td>
+                <td th:text="${emp.empDegree}">aaa</td>
+                <td th:text="${emp.empIntroduce}">aaa</td>
+                <td th:text="${emp.empStatus}">aaa</td>
+                <td align="center">
+                    <a th:href="@{'/InfWeb/update/'+${emp.empId}}">修&nbsp改</a>&nbsp|&nbsp
+                    <a th:href="@{'/InfWeb/delete/'+${emp.empId}}" onclick="return confirm('确认删除？')">删&nbsp除</a>
+                </td>
+            </tr>
+            <!--<tr>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td align="center"> <a href="/web/add">添&nbsp&nbsp&nbsp加</a></td>-->
+            <!--</tr>-->
+        </table>
+    </div>
 </div>
 </body>
 </html>

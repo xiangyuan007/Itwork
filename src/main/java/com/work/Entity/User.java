@@ -6,23 +6,22 @@ import javax.persistence.Id;
 @Entity
 public class User {
     @Id
-    private String UserName;
-    private String Identity;
-
-    public String getIdentity() {
-        return Identity;
-    }
-
-    public void setIdentity(String identity) {
-        Identity = identity;
-    }
+    private String userName;
+    private String identity;
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
+    public String getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
 }

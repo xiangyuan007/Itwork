@@ -11,4 +11,8 @@ public interface ConserveRepository extends JpaRepository<JobConserve,Integer> {
     @Modifying
     @Query(value="delete from job_conserve where emp_id=?1 and job_id=?2",nativeQuery = true)
     void delete(@RequestParam("emp_id") String emp_id,@RequestParam("job_id") String job_id);
+
+    @Query(value="select * from job_conserve where emp_id=?1 and job_id=?2",nativeQuery = true)
+    JobConserve findConserve(@RequestParam("emp_id") String emp_id,@RequestParam("job_id") String job_id);
+
 }

@@ -1,6 +1,8 @@
 package com.work.serviceImpl;
 
+import com.work.Entity.ConserveList;
 import com.work.Entity.JobConserve;
+import com.work.Repository.ConserveListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.work.Repository.ConserveRepository;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ import java.util.List;
 public class ConserveServiceImpl implements ConserveService {
     @Autowired
     private ConserveRepository conserveRepository;
+    @Autowired
+    private ConserveListRepository conserveListRepository;
     @Override
     public int addConserve(JobConserve conserve){
         int flag=1;
@@ -42,7 +46,18 @@ public class ConserveServiceImpl implements ConserveService {
         }
         return flag;
     }
+
     public JobConserve UpdateConserve(JobConserve conserve){
         return conserveRepository.save(conserve);
+    }
+
+    @Transactional
+    public List<ConserveList> findConserveList(String id){
+        return conserveListRepository.findConserveList(id);
+    }
+
+    @Transactional
+    public JobConserve findConserve(String emp_id,String job_id){
+        return conserveRepository.findConserve(emp_id,job_id);
     }
 }

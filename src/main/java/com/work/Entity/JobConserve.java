@@ -1,6 +1,7 @@
 package com.work.Entity;
 import javax.persistence.*;
 
+//@GeneratedValue( strategy = GenerationType.IDENTITY )
 @Entity
 public class JobConserve {
     @Id
@@ -9,6 +10,15 @@ public class JobConserve {
     private String empId;
     private String jobId;
     private String conserveDate;
+    private String conserveStatus;
+
+    public String getConserveStatus() {
+        return conserveStatus;
+    }
+
+    public void setConserveStatus(String conserveStatus) {
+        this.conserveStatus = conserveStatus;
+    }
 
     public Integer getId() {
         return id;
