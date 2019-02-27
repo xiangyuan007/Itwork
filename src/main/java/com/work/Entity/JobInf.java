@@ -16,6 +16,15 @@ public class JobInf {
     private String jobIntroduce;
     private String jobStatus;
     private String jobDate;
+    private String wxNickname;
+
+    public String getWxNickname() {
+        return wxNickname;
+    }
+
+    public void setWxNickname(String wxNickname) {
+        this.wxNickname = wxNickname;
+    }
 
     public String getJobDate() {
         return jobDate;

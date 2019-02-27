@@ -8,7 +8,7 @@ import com.work.Entity.ConserveList;
 import java.util.List;
 
 public interface ConserveListRepository extends JpaRepository<ConserveList,String> {
-    @Query(value="select conserve.job_id,conserve.conserve_date,job.job_title,job.job_type,job.job_place,job.bus_id from " +
+    @Query(value="select conserve.job_id,conserve.conserve_date,job.job_title,job.job_type,job.job_place,job.bus_id,wx_nickname from " +
             "job_conserve conserve,job_inf job where conserve.emp_id=?1 and conserve.job_id=job.job_id",nativeQuery = true)
     List<ConserveList> findConserveList(@RequestParam("id") String id);
 }

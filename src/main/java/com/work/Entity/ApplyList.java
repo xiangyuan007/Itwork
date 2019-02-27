@@ -12,6 +12,15 @@ public class ApplyList {
     private String jobPlace;
     private String applyDate;
     private String busId;
+    private String wxNickname;
+
+    public String getWxNickname() {
+        return wxNickname;
+    }
+
+    public void setWxNickname(String wxNickname) {
+        this.wxNickname = wxNickname;
+    }
 
     public String getApplyDate() {
         return applyDate;

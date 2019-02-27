@@ -8,4 +8,5 @@ public interface JJudgeService {
     List<JobJudge> FindAll();
     void deleteJudge(Integer id);
     JobJudge UpdateJudge(JobJudge judge);
+    List<JobJudge> findJudge(String id);
 }

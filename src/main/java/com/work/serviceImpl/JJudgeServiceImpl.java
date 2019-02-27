@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.work.Repository.JJudgeRepository;
 import org.springframework.stereotype.Service;
 import com.work.service.JJudgeService;
+
+import javax.transaction.Transactional;
 import java.util.List;
 @Service
 public class JJudgeServiceImpl implements JJudgeService {
@@ -25,5 +27,9 @@ public class JJudgeServiceImpl implements JJudgeService {
     }
     public JobJudge UpdateJudge(JobJudge judge){
         return jJudgeRepository.save(judge);
+    }
+    @Transactional
+    public List<JobJudge> findJudge(String id){
+        return jJudgeRepository.findJudge(id);
     }
 }

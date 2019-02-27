@@ -26,15 +26,9 @@ public class WxController {
     @Autowired
     private ApplyService applyService;
     @Autowired
-    private ApplyInfRepository applyInfRepository;
+    private EJudgeService eJudgeService;
     @Autowired
-    private ConserveListRepository conserveListRepository;
-    @Autowired
-    private ConserveRepository conserveRepository;
-    @Autowired
-    private ApplyListRepository applyListRepository;
-    @Autowired
-    private ApplyRepository applyRepository;
+    private JJudgeService jJudgeService;
     @PostMapping("/wxLogin")
     public String wxLogin(@RequestParam String openid, String identity) {
         String success1 = "用户初次登录成功";
@@ -129,7 +123,7 @@ public class WxController {
 
         return applyService.updateStatus(empId, jobId, applyStatus);
     }
-
+ 
     //增加用户信息
     @PostMapping("/addUser")
     public User addUser(@RequestBody User user) {
@@ -142,5 +136,10 @@ public class WxController {
         return userService.findOne(user.getUserName());
     }
 
+    //查询评价
+    @PostMapping("/findEJudge")
+    public List<EmployeeJudge> findEJudge(@RequestBody EmployeeJudge judge){return eJudgeService.findJudge(judge.getEmpId());}
 
+    @PostMapping("/findJJudge")
+    public List<JobJudge> findJJudge(@RequestBody JobJudge judge){return jJudgeService.findJudge(judge.getBusId());}
 }

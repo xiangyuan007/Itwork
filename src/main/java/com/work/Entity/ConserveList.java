@@ -12,6 +12,15 @@ public class ConserveList {
     private String jobPlace;
     private String conserveDate;
     private String busId;
+    private String wxNickname;
+
+    public String getWxNickname() {
+        return wxNickname;
+    }
+
+    public void setWxNickname(String wxNickname) {
+        this.wxNickname = wxNickname;
+    }
 
     public String getConserveDate() {
         return conserveDate;

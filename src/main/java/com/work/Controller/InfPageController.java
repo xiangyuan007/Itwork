@@ -66,8 +66,6 @@ public class InfPageController {
     @RequestMapping("/all2")
     public String getAll2(Model model){
         List<JobInf>  lists=jobService.FindAll();
-        System.out.println(lists.get(1).getJobId());
-        System.out.println(lists.get(2).getJobId());
         model.addAttribute("job",lists);
         return "index2";
     }
@@ -133,6 +131,8 @@ public class InfPageController {
         //stu.setStuID(stuID);
         JobInf tmp=new JobInf();
         tmp.setJobId(jobId);
+        tmp.setBusId(job.getBusId());
+        tmp.setJobDate(job.getJobDate());
         tmp.setJobTitle(job.getJobTitle());
         tmp.setJobType(job.getJobType());
         tmp.setJobPlace(job.getJobPlace());
@@ -140,6 +140,7 @@ public class InfPageController {
         tmp.setJobPNum(job.getJobPNum());
         tmp.setJobIntroduce(job.getJobIntroduce());
         tmp.setJobStatus(job.getJobStatus());
+        tmp.setWxNickname(job.getWxNickname());
         jobService.UpdateJob(tmp);
         model.addAttribute("job",job);
         //return getAllStu(model);

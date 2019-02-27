@@ -9,4 +9,5 @@ public interface EJudgeService {
     List<EmployeeJudge> FindAll();
     void deleteJudge(Integer id);
     EmployeeJudge UpdateJudge(EmployeeJudge judge);
+    List<EmployeeJudge> findJudge(String id);
 }

@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 public interface JobRepository extends JpaRepository<JobInf,String>{
-    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status from job_inf",nativeQuery = true)
+    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status,wx_nickname from job_inf",nativeQuery = true)
     List<Map<String,String>> findPart();
-    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status from job_inf where job_type=?1",nativeQuery = true)
+    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status,wx_nickname from job_inf where job_type=?1",nativeQuery = true)
     List<Map<String,String>> findPartByType(@RequestParam("type") String type);
-    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status from job_inf where job_place=?1",nativeQuery = true)
+    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status,wx_nickname from job_inf where job_place=?1",nativeQuery = true)
     List<Map<String,String>> findPartByPlace(@RequestParam("place") String place);
-    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status from job_inf where job_type=?1 and job_place=?2",nativeQuery = true)
+    @Query(value="select bus_id,job_id,job_title,job_type,job_place,job_date,job_status,wx_nickname from job_inf where job_type=?1 and job_place=?2",nativeQuery = true)
     List<Map<String,String>> findPartByKey(@RequestParam("type") String type,@RequestParam("place") String place);
     @Query(value="select * from job_inf where bus_id=?1",nativeQuery = true)
     List<JobInf> findByBusId(@RequestParam("id") String id);
